@@ -1,0 +1,85 @@
+//Made by markyjoe1990 of Youtube
+
+//Modified by Nintenlord
+
+//Modified by Blazer
+ 
+
+#define DISABLE_TUTORIALS
+
+#include EAstdlib.event  
+
+EventPointerTable(0x??,Pointers)
+
+org 0x????????
+Pointers:
+POIN Turn_events
+POIN Character_events
+POIN Location_events
+POIN Misc_events
+POIN BallistaData BallistaData
+POIN BadEN BadEH BadEN BadEH
+POIN GoodEN GoodEH GoodEN GoodEH
+POIN Opening_event Ending_event
+
+Turn_events:
+CODE 0x00
+
+Character_events:
+CODE 0x00
+
+Location_events:
+CODE 0x00
+
+Misc_events:
+CauseGameOverIfLordDies
+CODE 0x00	 
+
+Ballista_events:
+CODE 0x00	  
+
+Opening_event:
+ENDB	   
+
+Ending_event:
+MNCH 0x??
+ENDA	    
+
+GoodEN:
+UNIT Empty	     
+
+GoodEH:
+UNIT Empty	      
+
+BadEN:
+UNIT Empty	       
+
+BadEH:
+UNIT Empty
+		 
+
+#ifdef _FE7_
+#define TileMap(TCN,X1,X2,L1,L2,TilePointer) "CODE TCN X1 X2 L1; CODE L2 0x00 0x00 0x00; POIN TilePointer"
+#endif		  
+
+org 0xC9C9C8+(4*0x??) // - Pointer to tile map changes
+		   
+
+POIN TileChanges		    
+
+
+org 0x????????	     
+
+TileChanges:
+TileMap(0x00,X1,X2,Y1,Y2,TilePointer)
+CODE $FF
+CODE $00
+CODE $00
+	      
+
+TilePointer:
+CODE (Tile hex)
+CODE $00	       
+
+MESSAGE Events end at offset currentOffset
+//The map for this chapter is at offset: ????????
