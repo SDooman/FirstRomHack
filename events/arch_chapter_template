@@ -1,0 +1,52 @@
+#define DISABLE_TUTORIALS
+#include EAstdlib.event
+
+EventPointerTable(EventTableID,Chapter)
+
+
+ORG StartOffset
+Chapter:
+POIN TurnEvents 
+POIN TalkEvents 
+POIN LocationEvents 
+POIN MiscEvents
+POIN TerrainEvents TerrainEvents 
+POIN Bad Bad Bad Bad
+POIN Good Good Good Good
+POIN OpeningScene EndingScene
+
+Bad:
+UNIT
+
+Good:
+UNIT
+
+TurnEvents:
+TURN
+
+CharacterEvents:
+CHAR
+
+LocationEvents:
+LOCA
+
+MiscEvents:
+CauseGameOverIfLordDies
+AFEV
+
+TerrainEvents:
+BLST
+ALIGN 4
+
+
+OpeningScene:
+ENDA
+
+EndingScene:
+MoveToChapter(NextChapter)
+
+
+
+
+MESSAGE Events end at offset currentOffset
+//The map for this chapter is at offset: ????????

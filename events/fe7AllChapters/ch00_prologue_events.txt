@@ -1,0 +1,314 @@
+
+////////////////////////////////////////////////////
+//                                                //
+// Disassembled with Nintenlord's Event Assembler //
+// Version: 9.10.4713.28131                       //
+// Game: FE7                                      //
+// File: fe.GBA                                   //
+// Offset: $CA0720                                //
+//                                                //
+////////////////////////////////////////////////////
+
+
+
+ORG $CA0540
+TurnBasedEvents:
+TURN 0x0 BeginningScene [1,0] 0x0 0x0
+TURN 0x0 label12 [1,0] 0x0 0x0
+TURN 0x0 label13 [2,0] 0x8 0x0
+TURN 0x0 label14 [4,0] 0x8 0x0
+END_MAIN
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA0584 and the new ending offset is CURRENTOFFSET
+
+ORG $CA05C8
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+LOCA 0x3 [3,2] 0xF
+END_MAIN
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA05DC and the new ending offset is CURRENTOFFSET
+
+ORG $CA06D4
+MiscBasedEvents:
+AFEV 0x14 label15 0xC
+AFEV 0x15 label16 0xD
+AFEV 0x16 label17 0xE
+AFEV 0x17 label18 0xF
+AFEV 0x18 label19 0x10
+AFEV 0x0 label20 0x65
+END_MAIN
+
+PointerList:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN TrapsEliwoodMode TrapsHectorMode
+POIN EnemyUnitsENM EnemyUnitsENM EnemyUnitsENM EnemyUnitsENM
+POIN AllyUnitsENM AllyUnitsENM AllyUnitsENM AllyUnitsENM
+POIN BeginningScene EndingScene
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA0760 and the new ending offset is CURRENTOFFSET
+
+ORG $CA71A8
+TrapsEliwoodMode:
+ENDTRAP
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA71A9 and the new ending offset is CURRENTOFFSET
+
+ORG $CA730A
+TrapsHectorMode:
+ENDTRAP
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA730B and the new ending offset is CURRENTOFFSET
+
+ORG $CA749C
+label20:
+_0x87
+STAL 30
+ASMC 0x7A455
+STAL 10
+ASMC 0x13FA5
+STAL 80
+ASMC 0x6CCB9
+GOTO_IFAT 0x1 0x7A47D
+ASMC 0x20479
+LABEL 0x1
+ASMC 0xB2F95
+ENDA
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA74F0 and the new ending offset is CURRENTOFFSET
+
+ORG $CA79FC
+label21:
+MOMA 0x0
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA79FE and the new ending offset is CURRENTOFFSET
+
+ORG $CA7A10
+label22:
+BLDT 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 1b 0b 0b 0b 0b 0b 0b 0b 0
+BLDT 0b 0b 0b 1b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 1b 0b 0b 0b 0b 0
+BLDT 0b 0b 1b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 1b 0b 0b 0b 0b 0
+BLDT
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA7A20 and the new ending offset is CURRENTOFFSET
+
+ORG $CA7A30
+label23:
+BLDT 0b 1b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 1b 0b 0b 0b 0b 0b 0b 0b 0
+BLDT 0b 0b 0b 1b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 1b 0b 0b 0b 0b 0
+BLDT 1b 0b 0b 1b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 0b 1b 1b 1b 0b 0b 0b 0b 0
+BLDT
+
+BeginningScene:
+CMOF
+LOU1 EnemyUnitsENM
+ENUN
+ASMC 0x7A939 0x7A9D5
+FADUCG 2
+SHOWMAP
+TEXTCG 0x813 0x1
+FADICG 0
+HIDEMAP
+SHCG 0x0
+MUSC 0x3F
+FADUCG 2
+SHOWMAP
+STAL 60
+TEXTCG 0x814 0x1
+CGSTAL 16
+FADI 4
+HIDEMAP
+ASMC 0x7A95D
+STAL 32
+BACG 0x18
+//BACG 0x0
+FADU 4
+SHOWMAP
+TEX1 0x815
+REBU
+MUEN 4
+REMA
+STAL 32
+LOU1 AllyUnitsENM
+ENUN
+STAL 64
+MOVE 0x3 [14,9]
+ENUN
+REPA 0x3
+FADI 16
+HIDEMAP
+BACG 0x0
+FADU 16
+SHOWMAP
+MUSC 0x32
+TEX1 0x816
+REMA
+LOU1 AllyUnitsENM
+ENUN
+LOEV 0xCD 0x51 [14,9]
+ENDA
+
+label12:
+SHOWMAP
+MOVE 0xCD [14,7]
+ENUN
+TEX1 0x817
+REMA
+GOTO_IFNTUTORIAL 0x32
+_0x8A
+STAL 8
+TEX6 0x5 [0,0] 0x818
+_ASM0x42 0x83181
+LABEL 0x32
+MOVE 0xCD label21
+ENUN
+DISA 0xCD
+_IFTT2 0x1 0x63
+ENUT 0x6
+_0xA3
+_0xA4 0x71
+LABEL 0x63
+ENDA
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA7BD0 and the new ending offset is CURRENTOFFSET
+
+ORG $CA7C28
+label13:
+_IFTT2 0x1 0x63
+_0x8A
+_0xA2 label22
+LABEL 0x63
+ENDA
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA7C4C and the new ending offset is CURRENTOFFSET
+
+ORG $CA7CDC
+label14:
+_IFTT2 0x1 0x63
+_0x8A
+_0xA2 label23
+LABEL 0x63
+ENDA
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA7D00 and the new ending offset is CURRENTOFFSET
+
+ORG $CA8154
+label15:
+_0x8A
+_0xA1 0x0
+TEX1 0x81E
+REMA
+_0xA3
+ENDA
+
+label16:
+_0x8A
+_0xA1 0x0
+_0xA3
+ENDA
+
+label17:
+_0x8A
+_0xA1 0x0
+_0xA3
+ENDA
+
+label18:
+_0x8A
+_0xA1 0x0
+TEX1 0x82E
+REMA
+_0xA3
+ENDA
+
+label19:
+_0x8A
+_0xA1 0x0
+_0xA3
+ENDA
+
+EndingScene:
+_0xA3
+MUSC 0x38
+TEX1 0x833
+REMA
+MUEN 6
+FADICG 3
+HIDEMAP
+ASMC 0x7A939 0x7A8B9 0x7A9D5
+STAL 30
+MUSC 0x3AB
+FADUCG 2
+SHOWMAP
+STAL 60
+TEXTCG 0x834 0x1
+MUEN 4
+FADI 16
+HIDEMAP
+ASMC 0x7A95D
+BACG 0x0
+MUSC 0x3F
+FADU 16
+SHOWMAP
+TEX1 0x835
+MUEN 2
+STAL 32
+MUSM 0x51 0x4
+MORETEXT 0x836
+MUEN 2
+STAL 32
+MUSC 0x3F
+MORETEXT 0x837
+STAL 64
+MORETEXT 0x838
+GOTO_IFNTUTORIAL 0x33
+FADI 4
+HIDEMAP
+BACG 0x5B
+FADU 4
+SHOWMAP
+STAL 8
+TEX6 0x5 [0,0] 0x839
+_ASM0x42 0x83181
+GOTO 0x34
+LABEL 0x33
+FADI 4
+HIDEMAP
+BACG 0x5B
+LABEL 0x34
+MNCH 0x1
+STAL 1
+_0x1
+ENDA
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA830C and the new ending offset is CURRENTOFFSET
+
+ORG $CC5B50
+AllyUnitsENM:
+UNIT 0x3 0x2 0x0 0x8 [14,9] [13,7] [0x1,0x6B,0x6B,0x0] [0x0,0x0,0x0,0x0]
+UNIT
+
+EnemyUnitsENM:
+UNIT 0x87 0x39 0x0 0x14 [3,2] [3,2] [0x1F,0x0,0x0,0x0] [0x3,0x3,0x9,0x20]
+UNIT 0x88 0x39 0x87 0xC [2,6] [2,6] [0x1F,0x0,0x0,0x0] [0x0,0x0,0x9,0x0]
+UNIT
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CC5BA0 and the new ending offset is CURRENTOFFSET
