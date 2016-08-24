@@ -1,0 +1,79 @@
+
+////////////////////////////////////////////////////
+//                                                //
+// Disassembled with Nintenlord's Event Assembler //
+// Version: 9.10.4713.28131                       //
+// Game: FE7                                      //
+// File: fe.GBA                                   //
+// Offset: $CA6A70                                //
+//                                                //
+////////////////////////////////////////////////////
+
+
+
+ORG $CA6A50
+TurnBasedEvents:
+TURN 0x0 label12 [1,0] 0x0 0x0
+END_MAIN
+
+CharacterBasedEvents:
+END_MAIN
+
+LocationBasedEvents:
+END_MAIN
+
+MiscBasedEvents:
+END_MAIN
+
+PointerList:
+POIN TurnBasedEvents
+POIN CharacterBasedEvents
+POIN LocationBasedEvents
+POIN MiscBasedEvents
+POIN TrapsEliwoodMode TrapsHectorMode
+POIN EnemyUnitsENM EnemyUnitsENM EnemyUnitsENM EnemyUnitsENM
+POIN AllyUnitsENM AllyUnitsENM AllyUnitsENM AllyUnitsENM
+POIN BeginningScene EndingScene
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA6AB0 and the new ending offset is CURRENTOFFSET
+
+ORG $CA72FE
+TrapsEliwoodMode:
+ENDTRAP
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA72FF and the new ending offset is CURRENTOFFSET
+
+ORG $CA7490
+TrapsHectorMode:
+ENDTRAP
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CA7491 and the new ending offset is CURRENTOFFSET
+
+ORG $CC048C
+BeginningScene:
+ENDA
+
+EndingScene:
+ENDA
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CC049C and the new ending offset is CURRENTOFFSET
+
+ORG $CE0F64
+AllyUnitsENM:
+UNIT 0x1 0x1 0x0 0x8 [8,8] [8,8] [0x9,0x6B,0x0,0x0] [0x0,0x0,0x0,0x0]
+UNIT
+
+EnemyUnitsENM:
+UNIT
+
+label12:
+LOU1 AllyUnitsENM
+ENUN
+ENDA
+
+//The next line is for re-assembling purposes. Do not delete!
+MESSAGE Original ending offset is $CE0FA8 and the new ending offset is CURRENTOFFSET
